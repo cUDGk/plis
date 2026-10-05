@@ -1,0 +1,7 @@
+# ブラウザが読み込み時に生成する
+_metadata/
+*.zip
+*.crx
+*.pem
+.DS_Store
+Thumbs.db

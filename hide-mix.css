@@ -1,0 +1,13 @@
+/* ミックスリスト (list=RD... / start_radio=1) の項目を一覧から消す。
+   YouTube は旧 renderer と新 lockup が混在するので両方を当てる。 */
+ytd-radio-renderer,
+ytd-compact-radio-renderer,
+ytm-radio-renderer,
+ytm-compact-radio-renderer,
+ytd-rich-item-renderer:has(a[href*="start_radio=1"], a[href*="list=RD"]),
+yt-lockup-view-model:has(a[href*="start_radio=1"], a[href*="list=RD"]),
+ytm-rich-item-renderer:has(a[href*="start_radio=1"], a[href*="list=RD"]),
+/* 再生ページ右の再生リストパネル (list を外すので本来出ないが、遷移直後の一瞬も含めて隠す) */
+ytd-playlist-panel-renderer {
+  display: none !important;
+}

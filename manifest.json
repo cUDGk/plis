@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "plis - play list is shit",
+  "version": "1.0.0",
+  "description": "YouTube の動画 URL から再生リスト (list / index / start_radio) を常に外し、ミックスリストを一覧から隠す",
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": ["*://*.youtube.com/*"],
+  "declarative_net_request": {
+    "rule_resources": [{ "id": "strip", "enabled": true, "path": "rules.json" }]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*", "*://m.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["hide-mix.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

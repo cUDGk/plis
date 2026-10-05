@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": { "queryTransform": { "removeParams": ["list", "index", "start_radio"] } }
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(www\\.|m\\.)?youtube\\.com/watch\\?(.*&)?list=",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]
